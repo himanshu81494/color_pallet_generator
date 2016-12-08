@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>A Color Palette Generator</title>
+  <meta name="description" content="A photo-based color palette generator." />
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script type="text/javascript" src="script.js"></script>
+  <!-- <link href='//fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'> -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+  <link href='main.css' rel='stylesheet' type='text/css'>
+  <script>
+    $(document).ready(function() {
+      var key = localStorage.getItem('CLIENT_ID');
+      var secret = localStorage.getItem('CLIENT_SECRET');
+      if (key === null || secret === null) {
+        $('#keys').attr('style', 'display: block;');
+      } else {
+        $('#imageupload').attr('style', 'display: block;');
+      }
+    });
+  </script>
+</head>
+<body>
+  <div class="container">
+    <div class="heading">
+      <div class="subhead">A color palette generator that uses clarifai API</div>
+      <div class="wheel">
+        <h1>CPG</h1>
+      </div>
+    </div>
+    <div class="input">
+      <div class="fader" id="keys" style="display: none;">
+        <div class="step">Input your API keys</div>
+        <div class="form">
+          <input type="text" id="key" placeholder="Client Key"/>
+          <button><a href="http://developer.clarifai.com" target="_blank">Get keys</a></button>
+          <input type="text" id="secret" placeholder="Client Secret"/>
+          <button onclick="setKeys($('#key').val(), $('#secret').val())">Set keys</button>
+        </div>
+      </div>
+      <div class="fader" id="imageupload" style="display: none;">
+        <div class="step">Upload a file</div>
+        <div class="form">
+          <input type="text" id="imgurl" placeholder="Image URL"/>
+          <button onclick="run($('#imgurl').val())">Get palette</button>
+          <div class="error"></div>
+        </div>
+        <div id="images"></div>
+      </div>
+    </div>
+    <div class="output">
+      <div class="fader" id="downloadable" style="display: none;">
+        <div class="step">Get your palette</div>
+        <div id="tags"></div>
+        <div class="step">Get the LESS</div>
+        <a class="buttonlink" download="colors.less" href="" id="downloadlink">Download</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

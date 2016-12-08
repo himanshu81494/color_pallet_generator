@@ -1,0 +1,179 @@
+html, body {
+  height: 100%;
+  padding: 0;
+}
+
+body {
+  background-color: #f9f9f9;
+  color: #6a7c83;
+  font-family: 'Helvetica', 'Arial', sans-serif;
+  font-size: 11px;
+  margin: 40px;
+  border: 3px solid black;
+}
+
+h1 {
+  color: black;
+  font-family: 'Poppins';
+  font-size: 4em;
+  margin: 0px;
+}
+
+.container {
+  background-color: #fff;
+  border-radius: 10px;
+/*  box-shadow: 10px 10px 0px 00px #0d8ecb;*/
+  min-height: calc(100% - 80px);
+
+  display: flex;
+  align-content: flex-start;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.fader {
+  -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 1s; /* Firefox < 16 */
+  -ms-animation: fadein 1s; /* Internet Explorer */
+  -o-animation: fadein 1s; /* Opera < 12.1 */
+  animation: fadein 1s;
+}
+
+#tags {
+  margin-bottom: 20px;
+
+  display: flex;
+  align-content: flex-start;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+#images img {
+  max-width: 80%;
+}
+
+.heading {
+  background-color: #ebf0f1;
+  border-radius: 10px 10px 0px 0px;
+  padding: 20px;
+  margin-bottom: 40px;
+  width: 100%;
+  text-align: center;
+}
+
+.input, .output {
+  min-height: 80%;
+  padding: 20px;
+  width: calc(50% - 41px); /* 41 because of the border */
+}
+
+.input {
+  border-right: 1px solid #ebf0f1;
+}
+
+.form {
+  margin-bottom: 20px;
+}
+
+.input button, .buttonlink {
+  background-color: #2fabe5;
+  border: solid 2px #0d8ecb;
+  transition: border 0.3s;
+  color: #fff;
+  outline: none;
+  padding: 10px;
+  width: 80px;
+}
+
+.input button a, .buttonlink {
+  color: #fff;
+  text-decoration: none;
+}
+
+.buttonlink {
+  display: inline-block;
+  width: 56px;
+  text-align: center;
+}
+
+.input button:hover {
+  background-color: #0d8ecb;
+}
+
+.input input {
+  padding: 10px;
+  border: none;
+  border-bottom: solid 2px #ebf0f1;
+  margin-bottom: 5px;
+  outline: none;
+  width: 70%;
+  transition: border 0.3s;
+}
+
+.input input:focus {
+  border-bottom: solid 2px #6a7c83;
+}
+
+.error {
+  color: red;
+}
+
+.error span {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.color-block {
+  width: 60px;
+  height: 60px;
+  border-radius: 30%;
+  line-height: 60px;
+  margin: 10px;
+  padding: 20px;
+  color: #fff;
+  text-align: center;
+  border: 1px solid black;
+  text-shadow: black 0px 0px 6px;
+}
+
+.step {
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.subhead {
+  text-transform: uppercase;
+}
+
+
+
+/* Responsive Jazz */
+@media screen and (max-width: 1080px) {
+  .input, .output {
+    width: 100%;
+    min-height: 40%;
+  }
+}
+
+/* Fade In */
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@-moz-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@-webkit-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@-ms-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@-o-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
